@@ -1,12 +1,11 @@
-[繁中版](./README-tw.md) | [简中版](./README-zh.md) | [Português (Brasil)](./README-pt_BR.md) | [Français](./README-fr.md) | [한국어](./README-ko.md) | [Nederlands](./README-nl.md) | [Indonesia](./README-id.md) | [ไทย](./README-th.md) | [Русский](./README-ru.md) | [Українська](./README-uk.md) | [Español](./README-es.md) | [Italiano](./README-it.md) | [日本語](./README-ja.md) | [Deutsch](./README-de.md) | [Türkçe](./README-tr.md) | [Tiếng Việt](./README-vi.md) | [Монгол](./README-mn.md) | [हिंदी](./README-hi.md) | [العربية](./README-ar.md) | [Polski](./README-pl.md) | [Македонски](./README-mk.md) | [ລາວ](./README-lo.md) | [Ελληνικά](./README-el.md)
+[繁中版](./README-tw.md) | [简中版](./README-zh.md) | [Português (Brasil)](./README-pt_BR.md) | [Français](./README-fr.md) | [한국어](./README-ko.md) | [Nederlands](./README-nl.md) | [Indonesia](./README-id.md) | [ไทย](./README-th.md) | [Русский](./README-ru.md) | [Українська](./README-uk.md) | [Español](./README-es.md) | [Italiano](./README-it.md) | [日本語](./README-ja.md) | [Deutsch](./README-de.md) | [Türkçe](./README-tr.md) | [Tiếng Việt](./README-vi.md) | [Монгол](./README-mn.md) | [हिंदी](./README-hi.md) | [العربية](./README-ar.md) | [Polski](./README-pl.md) | [Македонски](./README-mk.md) | [ລາວ](./README-lo.md) | [Ελληνικά](./README-el.md) | [Català](./README-ca.md) 
 
-# API Security Checklist
-Checklist of the most important security countermeasures when designing, testing, and releasing your API.
-
+# LLista de seguretat en APIs
+LLista de les contramesures més importants en el que respecta al disseny, testeig i llençament de les teves APIs.
 
 ---
 
-## Authentication
+## Autenticació
 - [ ] Don't use `Basic Auth`. Use standard authentication instead (e.g. [JWT](https://jwt.io/), [OAuth](https://oauth.net/)).
 - [ ] Don't reinvent the wheel in `Authentication`, `token generation`, `password storage`. Use the standards.
 - [ ] Use `Max Retry` and jail features in Login.
@@ -24,13 +23,13 @@ Checklist of the most important security countermeasures when designing, testing
 - [ ] Use `state` parameter with a random hash to prevent CSRF on the OAuth authentication process.
 - [ ] Define the default scope, and validate scope parameters for each application.
 
-## Access
+## Accés
 - [ ] Limit requests (Throttling) to avoid DDoS / brute-force attacks.
 - [ ] Use HTTPS on server side to avoid MITM (Man in the Middle Attack).
 - [ ] Use `HSTS` header with SSL to avoid SSL Strip attack.
 - [ ] For private APIs, only allow access from whitelisted IPs/hosts.
 
-## Input
+## Entrades
 - [ ] Use the proper HTTP method according to the operation: `GET (read)`, `POST (create)`, `PUT/PATCH (replace/update)`, and `DELETE (to delete a record)`, and respond with `405 Method Not Allowed` if the requested method isn't appropriate for the requested resource.
 - [ ] Validate `content-type` on request Accept header (Content Negotiation) to allow only your supported format (e.g. `application/xml`, `application/json`, etc.) and respond with `406 Not Acceptable` response if not matched.
 - [ ] Validate `content-type` of posted data as you accept (e.g. `application/x-www-form-urlencoded`, `multipart/form-data`, `application/json`, etc.).
@@ -38,17 +37,17 @@ Checklist of the most important security countermeasures when designing, testing
 - [ ] Don't use any sensitive data (`credentials`, `Passwords`, `security tokens`, or `API keys`) in the URL, but use standard Authorization header.
 - [ ] Use an API Gateway service to enable caching, Rate Limit policies (e.g. `Quota`, `Spike Arrest`, or `Concurrent Rate Limit`) and deploy APIs resources dynamically.
 
-## Processing
+## Processament
 - [ ] Check if all the endpoints are protected behind authentication to avoid broken authentication process.
 - [ ] User own resource ID should be avoided. Use `/me/orders` instead of `/user/654321/orders`.
-- [ ] Don't auto-increment IDs. Use `UUID` instead.
+- [ ] No utlitzis IDs auto incrementals. Utilitza `UUID` en el seu lloc.
 - [ ] If you are parsing XML files, make sure entity parsing is not enabled to avoid `XXE` (XML external entity attack).
 - [ ] If you are parsing XML files, make sure entity expansion is not enabled to avoid `Billion Laughs/XML bomb` via exponential entity expansion attack.
-- [ ] Use a CDN for file uploads.
+- [ ] Utilitza un CDN per la pujada de fitxers.
 - [ ] If you are dealing with huge amount of data, use Workers and Queues to process as much as possible in background and return response fast to avoid HTTP Blocking.
-- [ ] Do not forget to turn the DEBUG mode OFF.
+- [ ] No oblidis de deshabilitar el mode de DEBUG.
 
-## Output
+## Sortides
 - [ ] Send `X-Content-Type-Options: nosniff` header.
 - [ ] Send `X-Frame-Options: deny` header.
 - [ ] Send `Content-Security-Policy: default-src 'none'` header.
@@ -66,11 +65,11 @@ Checklist of the most important security countermeasures when designing, testing
 
 ---
 
-## See also:
-- [yosriady/api-development-tools](https://github.com/yosriady/api-development-tools) - A collection of useful resources for building RESTful HTTP+JSON APIs.
+## Veure També:
+- [yosriady/api-development-tools](https://github.com/yosriady/api-development-tools) - Una colecció de recursos útils per a la creació d'APIs RESTful HTTP+JSON.
 
 
 ---
 
-# Contribution
+# Contribució
 Feel free to contribute by forking this repository, making some changes, and submitting pull requests. For any questions drop us an email at `team@shieldfy.io`.
