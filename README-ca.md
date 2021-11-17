@@ -24,10 +24,10 @@ LLista de les contramesures més importants en el que respecta al disseny, teste
 - [ ] Defineix el àmbit (`scope`) per defecte, i valideu els parametres del àmbit per a cada aplicació.
 
 ## Accés
-- [ ] Limit requests (Throttling) to avoid DDoS / brute-force attacks.
-- [ ] Use HTTPS on server side to avoid MITM (Man in the Middle Attack).
-- [ ] Use `HSTS` header with SSL to avoid SSL Strip attack.
-- [ ] For private APIs, only allow access from whitelisted IPs/hosts.
+- [ ] Limita les peticions (`Throttling`) per evitar atacs DDoS i de força bruta.
+- [ ] Utilitza HTTPS al servidor per evitar atacs MITM (Man in the Middle Attack).
+- [ ] Utilitza la capcelera `HSTS` ab SSL per evitar un  SSL Strip attack.
+- [ ] per a APIs privades, sols accepta peticions de IPs/hosts permesos.
 
 ## Entrades
 - [ ] Use the proper HTTP method according to the operation: `GET (read)`, `POST (create)`, `PUT/PATCH (replace/update)`, and `DELETE (to delete a record)`, and respond with `405 Method Not Allowed` if the requested method isn't appropriate for the requested resource.
