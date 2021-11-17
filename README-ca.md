@@ -48,19 +48,19 @@ LLista de les contramesures més importants en el que respecta al disseny, teste
 - [ ] No oblidis de deshabilitar el mode de DEBUG.
 
 ## Sortides
-- [ ] Send `X-Content-Type-Options: nosniff` header.
-- [ ] Send `X-Frame-Options: deny` header.
-- [ ] Send `Content-Security-Policy: default-src 'none'` header.
-- [ ] Remove fingerprinting headers - `X-Powered-By`, `Server`, `X-AspNet-Version`, etc.
-- [ ] Force `content-type` for your response. If you return `application/json`, then your `content-type` response is `application/json`.
-- [ ] Don't return sensitive data like `credentials`, `Passwords`, or `security tokens`.
-- [ ] Return the proper status code according to the operation completed. (e.g. `200 OK`, `400 Bad Request`, `401 Unauthorized`, `405 Method Not Allowed`, etc.).
+- [ ] Envia la capcelera `X-Content-Type-Options: nosniff`.
+- [ ] Envia la capcelera `X-Frame-Options: deny`.
+- [ ] Envia la capcelera `Content-Security-Policy: default-src 'none'`.
+- [ ] Elimina les capceleres que deixen petjades - `X-Powered-By`, `Server`, `X-AspNet-Version`, etc.
+- [ ] Força `content-type` a les teves respostes. Si retornes un `json`, llavors el teu `content-type` serà `application/json`.
+- [ ] No retornis dades sensibles com poden ser: `credencials`, `Contrasenyes`, o `Tokens de seguretat`.
+- [ ] Retorna el codi HTTP corresponent a la operació completada. (e.g. `200 OK`, `400 Bad Request`, `401 Unauthorized`, `405 Method Not Allowed`, etc.).
 
 ## CI & CD
-- [ ] Audit your design and implementation with unit/integration tests coverage.
-- [ ] Use a code review process and disregard self-approval.
-- [ ] Ensure that all components of your services are statically scanned by AV software before pushing to production, including vendor libraries and other dependencies.
-- [ ] Design a rollback solution for deployments.
+- [ ] Audita el teu disseny i implemetació utilitzatzant el testeig unitari i d'integració i `test coverage`.
+- [ ] Utilitza processos de revisió de codi i evita les auto-aprovacions.
+- [ ] Asegura que tots els components dels teus serveis son escanejats estaticaments utilitzant un software AV abans d'anar a producció, incloient llibreries de tercers i dependències.
+- [ ] Dissenya un process de `rollback` per als teus desplegaments.
 
 
 ---
