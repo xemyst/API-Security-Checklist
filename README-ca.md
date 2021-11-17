@@ -12,16 +12,16 @@ LLista de les contramesures més importants en el que respecta al disseny, teste
 - [ ] Utilitza encryptació en totes les dades sensibles.
 
 ### JWT (JSON Web Token)
-- [ ] Use a random complicated key (`JWT Secret`) to make brute forcing the token very hard.
-- [ ] Don't extract the algorithm from the header. Force the algorithm in the backend (`HS256` or `RS256`).
-- [ ] Make token expiration (`TTL`, `RTTL`) as short as possible.
-- [ ] Don't store sensitive data in the JWT payload, it can be decoded [easily](https://jwt.io/#debugger-io).
+- [ ] Utilitza una clau complexa i aleatoria (`JWT Secret`) per dificultar al màxim els atacs de força bruta.
+- [ ] No extreguis el algoritme del contingut. Força l'algoritme al backend (`HS256` o `RS256`).
+- [ ] Fes que l'expiració del token (`TTL`, `RTTL`) sigui el més curta possible.
+- [ ] No guardis informació sensible al contingut del JWT, pot ser decodificada [facilemnt](https://jwt.io/#debugger-io).
 
 ### OAuth
-- [ ] Always validate `redirect_uri` server-side to allow only whitelisted URLs.
-- [ ] Always try to exchange for code and not tokens (don't allow `response_type=token`).
-- [ ] Use `state` parameter with a random hash to prevent CSRF on the OAuth authentication process.
-- [ ] Define the default scope, and validate scope parameters for each application.
+- [ ] Comprova sempre `redirect_uri` al costat del servidor per permetre solament certes URLs.
+- [ ] Intenta intercanviar sempre codi i no tokens (no permetis `response_type=token`).
+- [ ] Utilitza el parametre `state` amb un hash aleatori per previndre CSRF al procés d'autenticació OAuth.
+- [ ] Defineix el àmbit (`scope`) per defecte, i valideu els parametres del àmbit per a cada aplicació.
 
 ## Accés
 - [ ] Limit requests (Throttling) to avoid DDoS / brute-force attacks.
