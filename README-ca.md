@@ -27,19 +27,19 @@ LLista de les contramesures més importants en el que respecta al disseny, teste
 - [ ] Limita les peticions (`Throttling`) per evitar atacs DDoS i de força bruta.
 - [ ] Utilitza HTTPS al servidor per evitar atacs MITM (Man in the Middle Attack).
 - [ ] Utilitza la capcelera `HSTS` ab SSL per evitar un  SSL Strip attack.
-- [ ] per a APIs privades, sols accepta peticions de IPs/hosts permesos.
+- [ ] Per a APIs privades, sols accepta peticions de IPs/hosts permesos.
 
 ## Entrades
-- [ ] Use the proper HTTP method according to the operation: `GET (read)`, `POST (create)`, `PUT/PATCH (replace/update)`, and `DELETE (to delete a record)`, and respond with `405 Method Not Allowed` if the requested method isn't appropriate for the requested resource.
-- [ ] Validate `content-type` on request Accept header (Content Negotiation) to allow only your supported format (e.g. `application/xml`, `application/json`, etc.) and respond with `406 Not Acceptable` response if not matched.
-- [ ] Validate `content-type` of posted data as you accept (e.g. `application/x-www-form-urlencoded`, `multipart/form-data`, `application/json`, etc.).
-- [ ] Validate user input to avoid common vulnerabilities (e.g. `XSS`, `SQL-Injection`, `Remote Code Execution`, etc.).
-- [ ] Don't use any sensitive data (`credentials`, `Passwords`, `security tokens`, or `API keys`) in the URL, but use standard Authorization header.
-- [ ] Use an API Gateway service to enable caching, Rate Limit policies (e.g. `Quota`, `Spike Arrest`, or `Concurrent Rate Limit`) and deploy APIs resources dynamically.
+- [ ] Utilitza el metode HTTP acorde amb l'operació: `GET (lectura)`, `POST (crear)`, `PUT/PATCH (canviar/actualitzar)`, i `DELETE (eliminar)`, i respons amb `405 Method Not Allowed` si el metode de peticióno és lapropiat per el recurs solicitat.
+- [ ] Valida el `content-type` a la capcelera `Accept` de les peticions (Content Negotiation) per permetre solament els formats suportats (e.g. `application/xml`, `application/json`, etc.) i respon amb `406 Not Acceptable` si no correspon.
+- [ ] Valida el `content-type` de les dades rebudes en base a la que acceptis (e.g. `application/x-www-form-urlencoded`, `multipart/form-data`, `application/json`, etc.).
+- [ ] Valida l'entada de dades dels usuaris per evitar les vulneravilitats més conegudes (e.g. `XSS`, `SQL-Injection`, `Remote Code Execution`, etc.).
+- [ ] No utilitzis dades sensibles (`credentials`, `Passwords`, `security tokens`, or `API keys`) a la  URL, but use standard Authorization header.
+- [ ] Utilitza una servei de API Gateway per permetre el magatzematge en cache, politiques de limits d'ús (e.g. `Quota`, `Spike Arrest`, or `Concurrent Rate Limit`) i desplega els recursos de les APIs dinamicament.
 
 ## Processament
-- [ ] Check if all the endpoints are protected behind authentication to avoid broken authentication process.
-- [ ] User own resource ID should be avoided. Use `/me/orders` instead of `/user/654321/orders`.
+- [ ] Comprova que tots els endpoints estan protegits darrera autenticació per evitar trencar el process d'autenticació.
+- [ ] Evita els recursos sota un ID d'usuari. Utilitza `/me/orders` enlloc de `/user/654321/orders`.
 - [ ] No utlitzis IDs auto incrementals. Utilitza `UUID` en el seu lloc.
 - [ ] If you are parsing XML files, make sure entity parsing is not enabled to avoid `XXE` (XML external entity attack).
 - [ ] If you are parsing XML files, make sure entity expansion is not enabled to avoid `Billion Laughs/XML bomb` via exponential entity expansion attack.
