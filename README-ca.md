@@ -6,10 +6,10 @@ LLista de les contramesures més importants en el que respecta al disseny, teste
 ---
 
 ## Autenticació
-- [ ] Don't use `Basic Auth`. Use standard authentication instead (e.g. [JWT](https://jwt.io/), [OAuth](https://oauth.net/)).
-- [ ] Don't reinvent the wheel in `Authentication`, `token generation`, `password storage`. Use the standards.
-- [ ] Use `Max Retry` and jail features in Login.
-- [ ] Use encryption on all sensitive data.
+- [ ] No utilitzis `Basic Auth`. Utilitza els estandards d'autenticació (e.g. [JWT](https://jwt.io/), [OAuth](https://oauth.net/)).
+- [ ] No reinventis la roda en `Autenticació`, `generació de tokens`, `enmagatzemament de contrasenyes`. Utilitza els estandards.
+- [ ] Utilitza una politica de limit de intents  (`Max Retry`) y funcionalitats de jailing al Login.
+- [ ] Utilitza encryptació en totes les dades sensibles.
 
 ### JWT (JSON Web Token)
 - [ ] Use a random complicated key (`JWT Secret`) to make brute forcing the token very hard.
@@ -72,4 +72,4 @@ LLista de les contramesures més importants en el que respecta al disseny, teste
 ---
 
 # Contribució
-Feel free to contribute by forking this repository, making some changes, and submitting pull requests. For any questions drop us an email at `team@shieldfy.io`.
+Sentiu-vos lliures de contrubuir fent un "fork" d'aquest repository, fent alguns canvis, i sotmeten una solicitud de "pull". Per a qualsevol pregunta envieu-nos un email a `team@shieldfy.io`.
